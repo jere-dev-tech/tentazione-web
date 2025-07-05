@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alfajores artesanales Tentazione. Tentate con el mejor sabor casero.">
+  <meta name="keywords" content="alfajores, artesanales, Catamarca, caseros, Tentazione">
+  <meta property="og:title" content="Tentazione Alfajores Artesanales">
+  <title>Tentazione alfajores</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSSestilos/styles.css">
+</head>
+<body class="text-white">
+
+<!-- Header -->
+<header id="mainHeader" class="bg-black text-white fixed top-0 w-full z-50">
+  <div class="flex items-center justify-between px-4 py-2">
+    <h1 class="text-[28px] font-bold luminance whitespace-nowrap">
+      <a href="#" onclick="location.reload(); return false;">TENTAZIONE</a>
+    </h1>
+    <div class="flex items-center gap-4">
+      <!-- Lupa -->
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+      </button>
+
+      <!-- Carrito con número más grande -->
+      <button id="botonCarrito" class="relative cursor-pointer transition-all duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.342 1.09.834L5.9 7.5h12.472a1.125 1.125 0 0 1 1.09 1.447l-1.65 5.5a1.125 1.125 0 0 1-1.09.803H8.25a1.125 1.125 0 0 1-1.09-.803L5.136 4.334A1.125 1.125 0 0 0 4.046 3H2.25z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM17 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
+        </svg>
+<span id="contadorCarrito" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">
+  0
+</span>
+
+
+
+
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú -->
+  <nav class="bg-[#1a1a1a] text-white flex justify-center items-center gap-8 h-[43px] text-sm font-medium tracking-wide uppercase">
+    <a href="#">MENÚ</a>
+    <a href="#">PRODUCTOS</a>
+    <a href="#sobre-tentazione" class="text-pink-300 hover:underline">Sobre Tentazione</a>
+  </nav>
+</header>
+
+
+<!-- Slider -->
+<div class="slider-container w-full relative mt-0">
+  <div id="slider" class="slides">
+    
+<!-- Slide 1 -->
+<div class="slide min-w-full snap-center relative group">
+  <img src="imagenes/EDICION BLANCO NEGRO.jpg" class="img-slide-1" />
+  <div class="texto-slider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <p class="text-4xl font-bold sombra-texto">UNO NO ALCANZA</p>
+    <p class="compart-reg text-lg tracking-wide sombra-texto">
+     EL SABOR QUE TE TIENTA
+    </p>
+    <p class="text-4xl font-extrabold uppercase mt-1 sombra-texto">ALFAJORES ARTESANALES</p>
+  </div>
+</div>
+
+    <!-- Slide2 -->
+    <div class="slide min-w-full snap-center relative">
+      <img src="imagenes/fondos/ALFA NEGRO.jpg" class="img-slide-2" />
+    </div>
+  </div>
+
+   <!-- ⬇️ Fondodots  -->
+  <div class="fondo-dots"></div>
+  <div class="dots">
+    <button class="dot-active" data-slide="0"></button>
+    <button data-slide="1"></button>
+  </div>
+</div>
+
+
+
+<!-- Imagen del dique justo pegada al fondo negro de los dots -->
+<div class="relative w-full h-[320px] overflow-hidden font-[Quicksand] -mt-[2px]">
+  <img src="imagenes/foto editada dike.jpg" alt="Banner Catamarca" class="w-full h-full object-cover brightness-[1.1]" />
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <!-- Texto opcional -->
+  </div>
+</div>
+
+<!-- Fondo negro separador justo pegado debajo -->
+<div class="fondo-separador -mt-[2px]"></div>
+
+
+
+<!-- === TEXTO CON ANIMACIÓN DE LETRAS SOBRE IMAGEN === -->
+<div id="zoomText">
+  <img src="imagenes/alfa blanconegro.png" alt="Stock de alfajores" />
+  <div id="zonaZoom">
+    <h2 class="h2-animado">
+      NUESTROS ALFAJORES<br>
+      LISTOS PARA VOS
+    </h2>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Segundo fondo separador -->
+<div class="fondo-separador"></div>
+
+
+
+
+
+
+
+<section id="card-section" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-10 justify-items-center">
+
+  <!-- Alfajor Patagónico -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/patagonico ia.png" alt="Alfajor Patagónico" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="titulo-patagonico text-2xl font-bold mb-1">ALFAJOR PATAGÓNICO</h3>
+    <p class="text-white mb-1">$2500</p>
+    <p class="desc-patagonico text-sm mb-3">Frutos rojos y masa rústica artesanal.</p>
+    <div class="flex flex-col gap-2 items-center">
+     
+      <button onclick="abrirModalProducto('ALFAJOR PATAGÓNICO', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+  <!-- Repetir el mismo bloque para cada producto, con sus valores -->
+
+  <!-- Alfajor Bon o Bon -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/BON O BON usar este.JPG" alt="Alfajor Bon o Bon" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="text-2xl font-bold mb-1 text-yellow-400">ALFAJOR BON O BON</h3>
+    <p class="text-white mb-1">$2500</p>
+    <p class="text-sm text-amber-300 mb-3">Relleno con corazón de bon o bon, irresistible.</p>
+    <div class="flex flex-col gap-2 items-center">
+      
+      <button onclick="abrirModalProducto('ALFAJOR BON O BON', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+  <!-- Alfajor Negro -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/fondos/ALFA NEGRO.jpg" alt="Alfajor Clásico Negro" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="text-2xl font-bold mb-1 text-white">ALFAJOR NEGRO</h3>
+    <p class="text-white mb-1">$2000</p>
+    <p class="text-sm text-gray-300 mb-3">Chocolate negro clásico y relleno cremoso.</p>
+    <div class="flex flex-col gap-2 items-center">
+    
+      <button onclick="abrirModalProducto('ALFAJOR NEGRO', 2000)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+  <!-- Alfajor Blanco -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/ALFABLANCKO.jpeg" alt="Alfajor Blanco" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="titulo-blanco text-2xl font-bold mb-1">ALFAJOR BLANCO</h3>
+    <p class="text-white mb-1">$2000</p>
+    <p class="desc-blanco text-sm mb-3">Baño de chocolate blanco y dulce artesanal.</p>
+    <div class="flex flex-col gap-2 items-center">
+     
+      <button onclick="abrirModalProducto('ALFAJOR BLANCO', 2000)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+  <!-- Alfajor de Maní -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/mani.JPG" alt="Alfajor de Maní" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="text-2xl font-bold mb-1 text-orange-300">ALFAJOR DE MANÍ</h3>
+    <p class="text-white mb-1">$2500</p>
+    <p class="text-sm text-yellow-100 mb-3">Maní tostado y cobertura suave de cacao.</p>
+    <div class="flex flex-col gap-2 items-center">
+      
+      <button onclick="abrirModalProducto('ALFAJOR DE MANÍ', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+  <!-- Alfajor de Nuez -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/aLFAJOR NUEZ.JPG" alt="Alfajor de Nuez" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="titulo-nuez text-2xl font-bold mb-1">ALFAJOR DE NUEZ</h3>
+    <p class="text-white mb-1">$2500</p>
+    <p class="desc-nuez text-sm mb-3">Con trocitos de nuez real y masa firme.</p>
+    <div class="flex flex-col gap-2 items-center">
+      
+      <button onclick="abrirModalProducto('ALFAJOR DE NUEZ', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+  <!-- Alfajor Chocomousse -->
+  <div class="card-glass w-[260px] p-4 text-center">
+    <img src="imagenes/CHOCOMOUSSE IA.png" alt="Alfajor Chocomousse" class="w-full h-[180px] object-cover rounded-lg mb-4">
+    <h3 class="text-2xl font-bold mb-1 text-red-200">ALFAJOR CHOCOMOUSSE</h3>
+    <p class="text-white mb-1">$2500</p>
+    <p class="text-sm text-pink-100 mb-3">Doble capa de mousse de chocolate intenso.</p>
+    <div class="flex flex-col gap-2 items-center">
+      
+      <button onclick="abrirModalProducto('ALFAJOR CHOCOMOUSSE', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+        Agregar
+      </button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- Sección Sobre Tentazione -->
+<section id="sobre-tentazione" class="bg-black py-14 px-6 text-center">
+  <h2 class="text-4xl font-bold text-white mb-6 tracking-wider anim-fade-in">Sobre Tentazione</h2>
+  <p class="max-w-3xl mx-auto text-lg leading-relaxed text-white/80 anim-fade-in anim-delay">
+    Tentazione nació del deseo de recuperar esos sabores que nos conectan con lo casero, con lo real.  
+    Elaboramos cada alfajor a mano, con ingredientes nobles y recetas familiares.  
+    No somos industria, somos esencia.  
+    Cada mordida es un mimo, cada alfajor cuenta nuestra historia.
+  </p>
+</section>
+
+
+<!-- SECCIÓN WOW - ALFAJOR PARTIDO -->
+<section class="section-wow flex flex-col items-center justify-center py-16 overflow-hidden">  <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+    ¡UNA TENTACION POR DENTRO!
+  </h2>
+ <p class="texto-secundario text-lg max-w-xl text-center mb-8 px-4">
+ El interior más irresistible que vas a ver hoy 🤤
+</p>
+
+<img src="imagenes/ALFANEGROTRANSPARENTE.png" alt="Alfajor partido Tentazione"
+  id="img-wow"
+  class="w-[296px] sm:w-[400px] md:w-[450px] opacity-0 scale-50 transition-transform duration-500" />
+
+  <div id="mensaje-wow"
+    class="mensaje-oculto text-pink-300 font-bold text-xl mt-6 text-center transition-all duration-500">
+    ¡MIRA ESE RELLENO!
+  </div>
+</section>
+
+
+
+
+
+<!-- footer de Tentazione -->
+
+<footer class="footer-tentazione">
+  <div class="footer-contenido">
+    <p>© 2025 Tentazione Alfajores - Todos los derechos reservados.</p>
+    <p>Catamarca, Argentina</p>
+    <p>
+      <a href="https://www.instagram.com/tentazione.ar?igsh=MW5tM2ZmcmJjdGU0Yg==" target="_blank">INSTAGRAM</a> |
+      <a href="https://wa.me/5493834640224" target="_blank">WHATSAPP</a>
+    </p>
+  </div>
+</footer>
+
+
+
+<!-- MODAL DE CARRITO MEJORADO -->
+<div id="modalCarrito" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden justify-center items-center">
+  <div id="carritoContenido" class="modal-contenido bg-white p-4 rounded-lg shadow-lg w-full max-w-md">
+
+    <!-- Botón cerrar -->
+    <button id="cerrarModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold transition">×</button>
+
+    <!-- Título -->
+    <h2 class="text-2xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+      🛍️ <span>Tu pedido</span>
+    </h2>
+
+    <!-- Lista -->
+    <div id="carritoLista" class="space-y-4 max-h-[300px] overflow-y-auto pr-2"></div>
+
+    <!-- Total + Botón enviar -->
+    <div class="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <span class="font-bold text-xl">Total: $<span id="totalCarrito">0</span></span>
+      <button id="btnEnviarPedido" onclick="enviarPorWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition hidden">
+        Enviar por WhatsApp
+      </button>
+    </div>
+
+    <!-- Botón vaciar -->
+    <button id="btnVaciarCarrito" onclick="vaciarCarrito()" class="mt-5 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded-lg text-base transition">
+      Vaciar Carrito
+    </button>
+  </div>
+</div>
+
+
+<!-- MODAL INDIVIDUAL PARA AGREGAR PRODUCTO -->
+<div id="modalAgregar" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden justify-center items-center">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm relative text-center">
+
+    <!-- Botón cerrar -->
+    <button id="cerrarAgregarModal" class="absolute top-3 right-4 text-gray-400 hover:text-gray-800 text-2xl font-bold">×</button>
+
+    <!-- Nombre del producto -->
+    <h2 id="nombreProductoModal" class="text-xl font-bold text-pink-600 mb-2">Nombre del Producto</h2>
+
+    <!-- Precio -->
+    <p class="text-gray-700 mb-4">Precio: <span id="precioProductoModal">$0</span></p>
+
+    <!-- Controles de cantidad -->
+    <div class="flex items-center justify-center gap-4 mt-4">
+      <button id="restarCantidad" class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-xl font-bold disabled:opacity-50">−</button>
+      <input id="cantidadSeleccionada" type="number" min="1" max="99" value="1"
+        class="text-center w-12 border border-gray-300 rounded font-bold text-lg text-black bg-white">
+      <button id="sumarCantidad" class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-xl font-bold disabled:opacity-50">+</button>
+    </div>
+
+
+    <!-- Botones rápidos para seleccionar docenas -->
+<div class="flex justify-center gap-4 mt-2">
+<button onclick="seleccionarCantidadRapida(6)" class="border border-pink-400 text-pink-500 hover:bg-pink-100 px-3 py-1 rounded-lg font-semibold transition">
+  ½ Docena
+</button>
+<button onclick="seleccionarCantidadRapida(12)" class="border border-pink-400 text-pink-500 hover:bg-pink-100 px-3 py-1 rounded-lg font-semibold transition">
+  1 Docena
+</button>
+
+</div>
+
+
+    <!-- Botones Confirmar y Cancelar -->
+    <div class="flex justify-center gap-4 mt-6">
+      <button id="cancelarAgregar" class="px-4 py-2 rounded bg-gray-300 text-gray-800 hover:bg-gray-400">Cancelar</button>
+      <button id="confirmarAgregar" class="px-4 py-2 rounded bg-pink-500 text-white hover:bg-pink-600 font-bold">Confirmar</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- TOAST DE CONFIRMACIÓN -->
+<div id="toast" class="fixed z-[9999] bottom-24 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg text-sm opacity-0 pointer-events-none transition-all duration-500">
+  Producto agregado al carrito ✅
+</div>
+
+<!-- ✅ BOTÓN FLOTANTE DE WHATSAPP (fuera de cualquier modal) -->
+<div id="boton-wsp-flotante" class="fixed bottom-5 right-5 z-[99999] pointer-events-auto">
+  <!-- Botón principal -->
+  <button id="wspBtn" class="bg-green-500 p-3 rounded-full shadow-lg hover:scale-105 transition flex items-center justify-center w-[60px] h-[60px] z-[99999]">
+    <img src="imagenes/otrowsp.png" alt="WhatsApp" class="w-full h-full object-contain p-1" />
+  </button>
+
+  <!-- Opciones desplegables -->
+  <div id="wspMenu" class="hidden flex-col absolute bottom-[70px] right-0 bg-white text-black rounded-xl shadow-2xl px-5 py-4 w-48 text-[15px] font-[500] transition-all duration-300 opacity-0 scale-95 space-y-3 border border-gray-200 z-[99999]">
+    <a href="https://cutt.ly/CatalogoTentazione" target="_blank" class="flex items-center gap-3 hover:text-pink-600 transition">
+      🛍️<span>Ver Catálogo</span>
+    </a>
+    <a href="https://cutt.ly/PedidoTentazione" target="_blank" class="flex items-center gap-3 hover:text-green-600 transition">
+      🛒 <span>Hacer Pedido</span>
+    </a>
+  </div>
+</div>
+
+
+
+
+<!-- Scripts -->
+<script src="js/slider.js"></script>
+
+
+</body>
+</html>
