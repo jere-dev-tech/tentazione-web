@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('/PROYECTO/imagenes/chocoblanco.png') repeat center center fixed;
+  background: url('../imagenes/chocoblanco.png') repeat center center fixed;
   background-size: 300px;
   color: white;
   margin: 0;
