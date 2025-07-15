@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="PROYECTO/CSSestilos/styles.css">
+  <link rel="icon" href="data:,">
+
 </head>
 <body class="text-white">
 
@@ -48,8 +50,8 @@
 
   <!-- Menú -->
   <nav class="bg-[#1a1a1a] text-white flex justify-center items-center gap-8 h-[43px] text-sm font-medium tracking-wide uppercase">
-    <a href="#">MENÚ</a>
-    <a href="#">PRODUCTOS</a>
+<a href="menu.html" class="hover:text-pink-300 transition">MENÚ</a>
+  <a href="productos.html" class="hover:text-pink-300 transition">PRODUCTOS  ⇓</a>
     <a href="#sobre-tentazione" class="text-pink-300 hover:underline">Sobre Tentazione</a>
   </nav>
 </header>
@@ -61,7 +63,9 @@
     
 <!-- Slide 1 -->
 <div class="slide min-w-full snap-center relative group">
+
   <img src="PROYECTO/imagenes/edicion blanco negro.jpg.jpg" class="img-slide-1" />
+
   <div class="texto-slider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
     <p class="text-4xl font-bold sombra-texto">UNO NO ALCANZA</p>
     <p class="compart-reg text-lg tracking-wide sombra-texto">
@@ -136,13 +140,16 @@
 
   <!-- Alfajor Patagónico -->
   <div class="card-glass w-[260px] p-4 text-center">
+
     <img src="PROYECTO/imagenes/PATAGONICO20.jpg" alt="Alfajor Patagónico" class="w-full h-[180px] object-cover rounded-lg mb-4">
+
     <h3 class="titulo-patagonico text-2xl font-bold mb-1">ALFAJOR PATAGÓNICO</h3>
     <p class="text-white mb-1">$2500</p>
     <p class="desc-patagonico text-sm mb-3">Frutos rojos y masa rústica artesanal.</p>
     <div class="flex flex-col gap-2 items-center">
      
-      <button onclick="abrirModalProducto('ALFAJOR PATAGÓNICO', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR PATAGÓNICO', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -158,7 +165,8 @@
     <p class="text-sm text-amber-300 mb-3">Relleno con corazón de bon o bon, irresistible.</p>
     <div class="flex flex-col gap-2 items-center">
       
-      <button onclick="abrirModalProducto('ALFAJOR BON O BON', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR BON O BON', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -166,13 +174,16 @@
 
   <!-- Alfajor Negro -->
   <div class="card-glass w-[260px] p-4 text-center">
+
     <img src="PROYECTO/imagenes/alfanegro03.png" alt="Alfajor Clásico Negro" class="w-full h-[180px] object-cover rounded-lg mb-4">
+
     <h3 class="text-2xl font-bold mb-1 text-white">ALFAJOR NEGRO</h3>
     <p class="text-white mb-1">$2000</p>
     <p class="text-sm text-gray-300 mb-3">Chocolate negro clásico y relleno cremoso.</p>
     <div class="flex flex-col gap-2 items-center">
     
-      <button onclick="abrirModalProducto('ALFAJOR NEGRO', 2000)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR NEGRO', 2000)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -180,13 +191,16 @@
 
   <!-- Alfajor Blanco -->
   <div class="card-glass w-[260px] p-4 text-center">
+
     <img src="PROYECTO/imagenes/ALFABLANCO01.png" alt="Alfajor Blanco" class="w-full h-[180px] object-cover rounded-lg mb-4">
+
     <h3 class="titulo-blanco text-2xl font-bold mb-1">ALFAJOR BLANCO</h3>
     <p class="text-white mb-1">$2000</p>
     <p class="desc-blanco text-sm mb-3">Baño de chocolate blanco y dulce artesanal.</p>
     <div class="flex flex-col gap-2 items-center">
      
-      <button onclick="abrirModalProducto('ALFAJOR BLANCO', 2000)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR BLANCO', 2000)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -200,7 +214,8 @@
     <p class="text-sm text-yellow-100 mb-3">Maní tostado y cobertura suave de cacao.</p>
     <div class="flex flex-col gap-2 items-center">
       
-      <button onclick="abrirModalProducto('ALFAJOR DE MANÍ', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR DE MANÍ', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -214,7 +229,8 @@
     <p class="desc-nuez text-sm mb-3">Con trocitos de nuez real y masa firme.</p>
     <div class="flex flex-col gap-2 items-center">
       
-      <button onclick="abrirModalProducto('ALFAJOR DE NUEZ', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR DE NUEZ', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -228,7 +244,8 @@
     <p class="text-sm text-pink-100 mb-3">Doble capa de mousse de chocolate intenso.</p>
     <div class="flex flex-col gap-2 items-center">
       
-      <button onclick="abrirModalProducto('ALFAJOR CHOCOMOUSSE', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded-lg text-sm">
+      <button onclick="abrirModalProducto('ALFAJOR CHOCOMOUSSE', 2500)" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-base"
+>
         Agregar
       </button>
     </div>
@@ -257,7 +274,7 @@
  El interior más irresistible que vas a ver hoy 🤤
 </p>
 
-<img src="PROYECTO/imagenes/ALFANEGROTRANSPARENTE.png" alt="Alfajor partido Tentazione"
+<img src="/PROYECTO/imagenes/ALFANEGROTRANSPARENTE.png" alt="Alfajor partido Tentazione"
   id="img-wow"
   class="w-[296px] sm:w-[400px] md:w-[450px] opacity-0 scale-50 transition-transform duration-500" />
 
@@ -331,25 +348,12 @@
     <p class="text-gray-700 mb-4">Precio: <span id="precioProductoModal">$0</span></p>
 
     <!-- Controles de cantidad -->
-    <div class="flex items-center justify-center gap-4 mt-4">
+    <div class="flex items-center justify-center gap-4 mt-4 mb-4">
       <button id="restarCantidad" class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-xl font-bold disabled:opacity-50">−</button>
       <input id="cantidadSeleccionada" type="number" min="1" max="99" value="1"
         class="text-center w-12 border border-gray-300 rounded font-bold text-lg text-black bg-white">
       <button id="sumarCantidad" class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-xl font-bold disabled:opacity-50">+</button>
     </div>
-
-
-    <!-- Botones rápidos para seleccionar docenas -->
-<div class="flex justify-center gap-4 mt-2">
-<button onclick="seleccionarCantidadRapida(6)" class="border border-pink-400 text-pink-500 hover:bg-pink-100 px-3 py-1 rounded-lg font-semibold transition">
-  ½ Docena
-</button>
-<button onclick="seleccionarCantidadRapida(12)" class="border border-pink-400 text-pink-500 hover:bg-pink-100 px-3 py-1 rounded-lg font-semibold transition">
-  1 Docena
-</button>
-
-</div>
-
 
     <!-- Botones Confirmar y Cancelar -->
     <div class="flex justify-center gap-4 mt-6">
@@ -362,12 +366,13 @@
 
 
 
+
 <!-- TOAST DE CONFIRMACIÓN -->
 <div id="toast" class="fixed z-[9999] bottom-24 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg text-sm opacity-0 pointer-events-none transition-all duration-500">
   Producto agregado al carrito ✅
 </div>
 
-<!-- ✅ BOTÓN FLOTANTE DE WHATSAPP (fuera de cualquier modal) -->
+<!-- ✅ BOTÓN FLOTANTE DE WHATSAPP -->
 <div id="boton-wsp-flotante" class="fixed bottom-5 right-5 z-[99999] pointer-events-auto">
   <!-- Botón principal -->
   <button id="wspBtn" class="bg-green-500 p-3 rounded-full shadow-lg hover:scale-105 transition flex items-center justify-center w-[60px] h-[60px] z-[99999]">
@@ -388,9 +393,31 @@
 
 
 
-<!-- Scripts -->
-<script src="PROYECTO/js/slider.js"></script>
 
+
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btnVolverArriba"
+  
+  class="hidden opacity-0 fixed bottom-24 right-6 z-[99999] bg-pink-300 text-black border border-pink-500 rounded-full w-12 h-12 text-xl flex items-center justify-center transition-opacity duration-500 shadow-lg hover:scale-110"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+
+
+
+
+
+
+
+<!-- ✅ Carga única y correcta al final del body -->
+<script src="PROYECTO/js/slider.js"></script>
+<script src="PROYECTO/js/botonScroll.js"></script>
 
 </body>
 </html>
+
+

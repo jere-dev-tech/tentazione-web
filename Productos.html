@@ -1,121 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto final</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS esylos/menu stylos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos - Tentazione</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/PROYECTO/CSSestilos/productos.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
 </head>
-<body class="font-playfair">
-    <header class="bg-gray-800 text-white p-4 fixed w-full top-0 z-20">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-4xl font-bold luminance"><a href="/Inicio.html">Tentazione</a></h1>
-            <nav>
-                <div class="relative md:flex md:items-center">
-                    <input type="checkbox" id="menu-toggle" class="hidden">
-                    <label for="menu-toggle" class="menu-button focus:outline-none md:hidden">
-                        <div class="flex flex-col space-y-1">
-                            <span class="block w-6 h-0.5 bg-white"></span>
-                            <span class="block w-6 h-0.5 bg-white"></span>
-                            <span class="block w-6 h-0.5 bg-white"></span>
-                        </div>
-                    </label>
-                    <ul class="menu absolute right-0 top-full text-white p-4 space-y-2 rounded-md md:static md:bg-transparent md:flex md:space-y-0 md:space-x-8 md:p-0 nav-links">
-                        <li><a href="/Inicio.html" class="hover:text-blue-300">Inicio</a></li>
-                        <li><a href="/Menu.html" class="hover:text-blue-300">Productos</a></li>
-                        <li><a href="/Pedidos.html" class="hover:text-blue-300">Pedidos</a></li>
-                        <li><a href="/Ubicacion.html" class="hover:text-blue-300">Ubicación</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    
-    <img src="/imagenes/RESTAURANTE FONDO.webp" alt="Restaurante elegante" class="w-screen h-screen object-cover fixed">
 
-    <main class="relative z-10 pt-16 p-4">
-        <!-- Sección de Bienvenida -->
-        <section class="text-center py-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Nuestro Productos</h2>
-            <p class="text-lg md:text-xl mb-8 text-white">Platos principales</p>
-        </section>
+  <header class="bg-black p-4 flex items-center justify-between sticky top-0 z-50">
+  <!-- 🔙 Botón Home -->
+  <div class="home-icon">
+    <a href="index.html" title="Volver al inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="30" height="30">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m10-11v10a1 1 0 01-1 1h-5m-6 0h6" />
+      </svg>
+    </a>
+  </div>
 
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 1 Plato -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-            <img src="/imagenes/pulpo.jpg" alt="Plato Ejemplo" class="w-full h-48 object-cover rounded-md mb-4">
-            <h3 class="text-2xl font-semibold mb-2 text-white">Pulpo</h3>
-            <p class="text-gray-300 mb-4">Pulpo de roca con miel de membrillo de Atrapallada</p>
-            <span class="text-xl font-bold text-white">$14.99</span>
-        </div>
-        <!-- 2 Plato -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-            <img src="/imagenes/steak tartar.jpg" alt="Plato Ejemplo" class="w-full h-48 object-cover rounded-md mb-4">
-            <h3 class="text-2xl font-semibold mb-2 text-white">Steak</h3>
-            <p class="text-gray-300 mb-4">steak tartar de La Taberna de Elia</p>
-            <span class="text-xl font-bold text-white">$29.99</span>
-        </div>
-        <!-- 3 Plato -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-            <img src="/imagenes/crema de maiz.jpg" alt="Plato 1" class="w-full h-48 object-cover rounded-md mb-4">
-            <h3 class="text-2xl font-semibold mb-2 text-white">Crema de maíz</h3>
-            <p class="text-gray-700 mb-4 text-white">Crema de maíz, coco con jengibre y lemmongrass</p>
-            <span class="text-xl font-bold text-white">$34.99</span>
-        </div>
-        <!-- 4 Plato -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-            <img src="/imagenes/El salmonete de Casa Gerardo.jpg" alt="Plato 1" class="w-full h-48 object-cover rounded-md mb-4">
-            <h3 class="text-2xl font-semibold mb-2 text-white">salmonete</h3>
-            <p class="text-black mb-4 text-white">pescado rojo con un gusto delicado, frescura y sabor</p>
-            <span class="text-xl font-bold text-white">$24.99</span>
-        </div>
-   
+  <!-- 🌐 Navegación centrada -->
+  <nav class="flex-1 flex justify-center gap-10">
+    <a href="menu.html" class="nav-link">MENÚ</a>
+    <span class="nav-link active">PRODUCTOS</span>
+  </nav>
 
+<!-- 🛒 Carrito a la derecha -->
+<!-- 🛒 Carrito con contador fuera del botón -->
+<div class="relative" id="contenedorCarritoHeader">
+  <button id="botonCarrito" class="cursor-pointer transition-all duration-200 text-white hover:text-pink-400">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.342 1.09.834L5.9 7.5h12.472a1.125 1.125 0 0 1 1.09 1.447l-1.65 5.5a1.125 1.125 0 0 1-1.09.803H8.25a1.125 1.125 0 0 1-1.09-.803L5.136 4.334A1.125 1.125 0 0 0 4.046 3H2.25z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM17 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
+    </svg>
+  </button>
+  <span id="contadorCarrito" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold hidden">0</span>
+</div>
+
+
+</head>
+<body>
+
+</header>
+
+
+
+
+
+
+
+  <!-- PRODUCTOS -->
+  <section class="productos-section">
+  <div class="inline-block px-4 py-3 mb-10 bg-white/30 text-black rounded-xl shadow-md backdrop-blur-sm">
+  <h1 class="text-2xl font-bold font-[Playfair Display]">Combos Tentazione</h1>
+</div>
+
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center max-w-6xl mx-auto px-4">
+
+      <!-- 1/2 DOCENA  -->
+<div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
+  <img src="/imagenes-comprimidas/edicion blanco negro.jpg.jpg" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
+  <div class="p-4 text-center">
+    <p class="text-sm tracking-widest font-semibold">1/2 DOCENA CLASICOS  </p>
+    <p class="text-xl font-bold mt-2">$10,800</p>
+    <p class="text-sm text-gray-400 line-through mt-1">$12,0000</p>
+      <p class="text-sm mt-1">
+  <span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 10% OFF
+   <button
+  onclick="abrirModalProducto('CLASICOS 1/2 DOCENA', 10800)"
+  class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
+>
+  Agregar al carrito
+</button>
+
+  </div>
+</div>
+
+<!-- 1/2 DOCENA A ELECCION -->
+<div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
+  <img src="/imagenes-comprimidas/edicion blanco negro.jpg.jpg" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
+  <div class="p-4 text-center">
+    <p class="text-sm tracking-widest font-semibold"> 1/2 DOCENA A ELECCION</p>
+   <p class="text-xl font-bold mt-2">$14,000</p>
+   <p class="text-sm text-gray-400 line-through mt-1">$15,000</p>
+  <p class="text-sm mt-1">
+<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 10% OFF
+   <button
+ onclick="abrirModalProducto('1/2 DOCENA A ELECCION', 14000)"
+
+  class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
+>
+  Agregar al carrito
+</button>
+
+  </div>
+</div>
+
+
+<!-- DOCENA CLÁSICOS -->
+<div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
+  <img src="/imagenes-comprimidas/alfa blanconegro.png" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
+  <div class="p-4 text-center">
+    <p class="text-sm tracking-widest font-semibold">CLASICOS DOCENA </p>
+   <p class="text-xl font-bold mt-2">$20,400</p>
+   <p class="text-sm text-gray-400 line-through mt-1">$24,000</p>
+  <p class="text-sm mt-1">
+<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 15% OFF
+   <button
+ onclick="abrirModalProducto('DOCENA CLÁSICOS', 20400)"
+
+  class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
+>
+  Agregar al carrito
+</button>
+
+  </div>
+</div>
+
+
+
+      <!-- DOCENA A ELECCION -->
+<div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
+  <img src="/imagenes-comprimidas/alfa blanconegro.png" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
+  <div class="p-4 text-center">
+    <p class="text-sm tracking-widest font-semibold">DOCENA A ELECCION </p>
+   <p class="text-xl font-bold mt-2">$24,000</p>
+   <p class="text-sm text-gray-400 line-through mt-1">$30,000</p>
+  <p class="text-sm mt-1">
+<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 20% OFF
+   <button
+ onclick="abrirModalProducto('DOCENA A ELECCION', 24000)"
+
+  class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
+>
+  Agregar al carrito
+</button>
+
+  </div>
+</div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+<!-- MODAL INDIVIDUAL PARA AGREGAR PRODUCTO -->
+<div id="modalAgregar" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden justify-center items-center">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm relative text-center">
+
+    <!-- Botón cerrar -->
+    <button id="cerrarAgregarModal" class="absolute top-3 right-4 text-gray-400 hover:text-gray-800 text-2xl font-bold">×</button>
+
+    <!-- Nombre del producto -->
+    <h2 id="nombreProductoModal" class="text-xl font-bold text-pink-600 mb-2">Nombre del Producto</h2>
+
+    <!-- Precio -->
+    <p class="text-gray-700 mb-4">Precio: <span id="precioProductoModal">$0</span></p>
+
+    <!-- Controles de cantidad -->
+    <div class="flex items-center justify-center gap-4 mt-4 mb-4">
+      <button id="restarCantidad" class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-xl font-bold disabled:opacity-50">−</button>
+      <input id="cantidadSeleccionada" type="number" min="1" max="99" value="1" class="text-center w-12 border border-gray-300 rounded font-bold text-lg text-black bg-white">
+      <button id="sumarCantidad" class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-xl font-bold disabled:opacity-50">+</button>
     </div>
 
-        <!-- Sección Postres -->
-        <section id="specials" class="py-12 bg-transparent">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white">Postres</h2>
+    <!-- Botones Confirmar y Cancelar -->
+    <div class="flex justify-center gap-4 mt-6">
+      <button id="cancelarAgregar" class="px-4 py-2 rounded bg-gray-300 text-gray-800 hover:bg-gray-400">Cancelar</button>
+      <button id="confirmarAgregar" class="px-4 py-2 rounded bg-pink-500 text-white hover:bg-pink-600 font-bold">Confirmar</button>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class=" bg-[#D4AF37] p-6 rounded-lg shadow-md">
-                    <img src="/imagenes/torrija de horchata de Atrapallada.jpg" alt="Oferta Especial" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">torrija de horchata de Atrapallada</h3>
-                    <p class="text-black mb-4"> Pan de brioche que se deja empapar en una mezcla de horchata y leche condensada, para después terminar con el soplete, caramelizando la superficie</p>
-                    <span class="text-xl font-bold">$5.99</span>
-                </div>
-
-                <div class=" bg-[#D4AF37] p-6 rounded-lg shadow-md">
-                    <img src="/imagenes/El arroz con leche.jpg" alt="Plato 3" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">El arroz con leche</h3>
-                    <p class="text-black mb-4">arroz con leche, cremoso y dulce, bajo la capa cristalizada de caramelo.</p>
-                    <span class="text-xl font-bold">$9.99</span>
-                </div>
+  </div>
+</div>
 
 
-                <div class=" bg-[#D4AF37] p-6 rounded-lg shadow-md">
-                    <img src="/imagenes/tarta-pavlova-en-el-plato.webp" alt="Plato 3" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">Tarta Pavlova</h3>
-                    <p class="text-black mb-4">se corona con frutos rojos como frambuesas o arándanos</p>
-                    <span class="text-xl font-bold">$39.99</span>
-                </div>
-                <div class=" bg-[#D4AF37] p-6 rounded-lg shadow-md">
-                    <img src="/imagenes/new-york-cheesecake-en-el-plato.webp" alt="Plato 3" class="w-full h-48 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">New York Cheesecake</h3>
-                    <p class="text-black mb-4">tarta de queso americana de fruta fresca… Cualquier acompañamiento hace de esta tarta una auténtica delicia.</p>
-                    <span class="text-xl font-bold">$40.99</span>
-                </div>
+<!-- MODAL DE CARRITO MEJORADO -->
+<div id="modalCarrito" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden justify-center items-center">
+  <div id="carritoContenido" class="modal-contenido bg-white p-4 rounded-lg shadow-lg w-full max-w-md relative text-black">
 
-            </div>
-        </section>
-    </main>
+    <!-- Botón cerrar -->
+    <button id="cerrarModal" class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-bold transition">×</button>
 
-    <footer class="bg-gray-800 text-white text-center py-4 mt-19">
-        <p>&copy;Tentazione 2024</p>
-    </footer>
+    <!-- Título -->
+    <h2 class="text-2xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+      🛍️ <span>TU PEDIDO</span>
+    </h2>
 
+    <!-- Lista -->
+    <div id="carritoLista" class="space-y-4 max-h-[300px] overflow-y-auto pr-2 text-black">
+      <!-- Acá se insertan los productos con JavaScript -->
+    </div>
+
+    <!-- Total + Botón enviar -->
+    <div class="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <span class="font-bold text-xl text-black">Total: $<span id="totalCarrito">0</span></span>
+      <button id="btnEnviarPedido" onclick="enviarPorWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition hidden">
+        Enviar por WhatsApp
+      </button>
+    </div>
+
+    <!-- Botón vaciar -->
+    <button id="btnVaciarCarrito" onclick="vaciarCarrito()" class="mt-5 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded-lg text-base transition">
+      Vaciar Carrito
+    </button>
+  </div>
+</div>
+
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btnVolverArriba"
+
+  class="hidden opacity-0 fixed bottom-4 right-4 z-[99999] bg-pink-300 text-black border border-pink-500 rounded-full w-12 h-12 text-xl flex items-center justify-center transition-opacity duration-500 shadow-lg hover:scale-110"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+
+  <!-- SCRIPTS -->
+   <script src="/PROYECTO/js/botonScroll.js"></script>
+  <script src="/PROYECTO/js/productos.js"></script>
 </body>
 </html>
+
+

@@ -1,65 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ slider.js cargado correctamente");
+  console.log("✅ productos.js cargado correctamente");
 
-  // === VARIABLES GLOBALES ===
-  const productos = [
-    { nombre: "ALFAJOR PATAGÓNICO", precio: 2500 },
-    { nombre: "ALFAJOR BON O BON", precio: 2500 },
-    { nombre: "ALFAJOR NEGRO", precio: 2000 },
-    { nombre: "ALFAJOR BLANCO", precio: 2000 },
-    { nombre: "ALFAJOR DE MANÍ", precio: 2500 },
-    { nombre: "ALFAJOR DE NUEZ", precio: 2500 },
-    { nombre: "ALFAJOR CHOCOMOUSSE", precio: 2500 }
-  ];
-
-  let modalProductoActual = null;
   let carrito = JSON.parse(localStorage.getItem("carritoTentazione")) || [];
+  let productoTemporal = null;
+  let cantidadTemporal = 1;
 
-
-
-  // === WHATSAPP FLOTANTE ===
-  const wspBtn = document.getElementById("wspBtn");
-  const wspMenu = document.getElementById("wspMenu");
-
-  if (wspBtn && wspMenu) {
-    let menuAbierto = false;
-
-    wspBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      menuAbierto = !menuAbierto;
-
-      if (menuAbierto) {
-        wspMenu.classList.remove("hidden");
-        setTimeout(() => {
-          wspMenu.classList.remove("opacity-0", "scale-95");
-          wspMenu.classList.add("opacity-100", "scale-100", "flex");
-        }, 10);
-      } else {
-        wspMenu.classList.add("opacity-0", "scale-95");
-        wspMenu.classList.remove("opacity-100", "scale-100", "flex");
-        setTimeout(() => {
-          wspMenu.classList.add("hidden");
-        }, 300);
-      }
-    });
-
-    document.addEventListener("click", (e) => {
-      if (
-        menuAbierto &&
-        !wspMenu.contains(e.target) &&
-        !wspBtn.contains(e.target)
-      ) {
-        wspMenu.classList.add("opacity-0", "scale-95");
-        wspMenu.classList.remove("opacity-100", "scale-100", "flex");
-        setTimeout(() => {
-          wspMenu.classList.add("hidden");
-        }, 300);
-        menuAbierto = false;
-      }
-    });
-  }
-
-  // === MODAL AGREGAR PRODUCTO ===
   const modalAgregar = document.getElementById("modalAgregar");
   const cerrarAgregarModal = document.getElementById("cerrarAgregarModal");
   const nombreProductoModal = document.getElementById("nombreProductoModal");
@@ -70,9 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnConfirmarAgregar = document.getElementById("confirmarAgregar");
   const btnCancelarAgregar = document.getElementById("cancelarAgregar");
 
-  let productoTemporal = null;
-  let cantidadTemporal = 1;
-
   function actualizarBotones() {
     if (btnRestar && btnSumar && cantidadSeleccionada) {
       btnRestar.disabled = cantidadTemporal <= 1;
@@ -81,15 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function abrirModalAgregar(producto) {
-    productoTemporal = producto;
-    cantidadTemporal = 1;
-    nombreProductoModal.textContent = producto.nombre;
-    precioProductoModal.textContent = `$${producto.precio}`;
-    cantidadSeleccionada.value = cantidadTemporal;
-    modalAgregar.classList.remove("hidden");
-    modalAgregar.classList.add("flex");
-    actualizarBotones();
+  function cerrarModalAgregar() {
+    modalAgregar.classList.add("hidden");
+    modalAgregar.classList.remove("flex");
   }
 
   window.seleccionarCantidadRapida = function (cantidad) {
@@ -97,10 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarBotones();
   };
 
-  function cerrarModalAgregar() {
-    modalAgregar.classList.add("hidden");
-    modalAgregar.classList.remove("flex");
-  }
+  window.abrirModalProducto = function (nombre, precio) {
+    productoTemporal = { nombre, precio };
+    cantidadTemporal = 1;
+    nombreProductoModal.textContent = nombre;
+    precioProductoModal.textContent = `$${precio}`;
+    cantidadSeleccionada.value = cantidadTemporal;
+    modalAgregar.classList.remove("hidden");
+    modalAgregar.classList.add("flex");
+    actualizarBotones();
+  };
 
   if (btnSumar) {
     btnSumar.onclick = () => {
@@ -155,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // === CARRITO GENERAL ===
+  // === CARRITO ===
   const modal = document.getElementById("modalCarrito");
   const carritoLista = document.getElementById("carritoLista");
   const totalCarritoSpan = document.getElementById("totalCarrito");
@@ -272,7 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
       contador.classList.add("hidden");
     }
   }
-actualizarContadorCarrito();
+
+  actualizarContadorCarrito();
 
   function mostrarToast(mensaje = "Producto agregado al carrito ✅") {
     const toast = document.getElementById("toast");
@@ -290,108 +233,4 @@ actualizarContadorCarrito();
       toast.classList.add("opacity-0", "pointer-events-none");
     }, 3000);
   }
-
-  window.abrirModalProducto = function (nombre, precio) {
-    productoTemporal = { nombre, precio };
-    cantidadTemporal = 1;
-    nombreProductoModal.textContent = nombre;
-    precioProductoModal.textContent = `$${precio}`;
-    cantidadSeleccionada.value = cantidadTemporal;
-    modalAgregar.classList.remove("hidden");
-    modalAgregar.classList.add("flex");
-    actualizarBotones();
-  };
-
-  // === EFECTO WOW ===
-  const imgWow = document.getElementById('img-wow');
-  const mensajeWow = document.getElementById('mensaje-wow');
-
-  const observerWOW = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        imgWow.classList.remove('opacity-0', 'scale-50');
-        imgWow.classList.add('img-wow-animada');
-
-        mensajeWow.classList.remove('mensaje-oculto');
-        mensajeWow.classList.add('mensaje-visible');
-      } else {
-        imgWow.classList.remove('img-wow-animada');
-        imgWow.classList.add('opacity-0', 'scale-50');
-
-        mensajeWow.classList.remove('mensaje-visible');
-        mensajeWow.classList.add('mensaje-oculto');
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const sectionWow = document.querySelector('.section-wow');
-  if (sectionWow) observerWOW.observe(sectionWow);
-
-  // === AUTOSLIDE DEL SLIDER ===
-const slider = document.getElementById("slider");
-const dots = document.querySelectorAll(".dots button");
-let currentSlide = 0;
-let totalSlides = 0;
-
-if (slider) {
-  totalSlides = slider.children.length;
-
-  function mostrarSlide(index) {
-    slider.scrollTo({
-      left: index * slider.clientWidth,
-      behavior: "smooth",
-    });
-
-    dots.forEach(dot => dot.classList.remove("dot-active"));
-    if (dots[index]) dots[index].classList.add("dot-active");
-  }
-
-  function siguienteSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    mostrarSlide(currentSlide);
-  }
-
-  let intervalo = setInterval(siguienteSlide, 6000);
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      clearInterval(intervalo);
-      currentSlide = index;
-      mostrarSlide(currentSlide);
-      intervalo = setInterval(siguienteSlide, 5000);
-    });
-  });
-
-  slider.addEventListener("scroll", () => {
-    const slideWidth = slider.clientWidth;
-    const newIndex = Math.round(slider.scrollLeft / slideWidth);
-    if (newIndex !== currentSlide) {
-      currentSlide = newIndex;
-      dots.forEach(dot => dot.classList.remove("dot-active"));
-      if (dots[currentSlide]) dots[currentSlide].classList.add("dot-active");
-    }
-  });
-}
-
-
-  const h2Animado = document.querySelector(".h2-animado");
-  if (h2Animado) {
-    const observerH2 = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          h2Animado.classList.remove("h2-animado");
-          void h2Animado.offsetWidth;
-          h2Animado.classList.add("h2-animado");
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observerH2.observe(h2Animado);
-  }
-
- 
-
-  
 });
-
-

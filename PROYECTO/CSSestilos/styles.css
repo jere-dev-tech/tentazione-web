@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  
   width: 100%;
   background-color: black;
   overflow-x: hidden;
@@ -803,3 +803,34 @@ font-style: italic;
   animation: slideUpFade 0.5s ease;
 }
 
+
+#btnVolverArriba {
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+#btnVolverArriba:hover {
+  box-shadow: 0 0 10px #ffbde0, 0 0 20px #ff9bd6;
+  transform: scale(1.15);
+}
+
+#btnVolverArriba::after {
+ 
+  position: absolute;
+  bottom: 155%;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#btnVolverArriba:hover::after {
+  opacity: 1;
+}
