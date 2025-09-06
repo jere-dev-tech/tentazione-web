@@ -15,6 +15,49 @@ document.addEventListener("DOMContentLoaded", () => {
   let modalProductoActual = null;
   let carrito = JSON.parse(localStorage.getItem("carritoTentazione")) || [];
 
+// === BOTÓN VOLVER ARRIBA ===
+const btnVolverArriba = document.getElementById("btnVolverArriba");
+
+if (btnVolverArriba) {
+  let timeout;
+  let bloqueado = false;
+
+  window.addEventListener("scroll", () => {
+    if (bloqueado) return;
+
+    const scrollY = window.scrollY;
+
+    if (scrollY > 300) {
+      btnVolverArriba.classList.remove("hidden", "opacity-0");
+      btnVolverArriba.classList.add("opacity-100");
+
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        btnVolverArriba.classList.add("opacity-0");
+        setTimeout(() => {
+          if (window.scrollY <= 300) {
+            btnVolverArriba.classList.add("hidden");
+          }
+        }, 500);
+      }, 1000);
+    } else {
+      btnVolverArriba.classList.add("opacity-0");
+      setTimeout(() => {
+        btnVolverArriba.classList.add("hidden");
+      }, 500);
+    }
+  });
+
+  btnVolverArriba.addEventListener("click", () => {
+    bloqueado = true;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      bloqueado = false;
+    }, 1000);
+  });
+}
+
+
 
 
   // === WHATSAPP FLOTANTE ===
@@ -185,37 +228,48 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("carritoTentazione", JSON.stringify(carrito));
   }
 
-  function renderCarrito() {
-    if (!carritoLista || !totalCarritoSpan) return;
+function renderCarrito() {
+  if (!carritoLista || !totalCarritoSpan) return;
 
-    if (carrito.length === 0) {
-      carritoLista.innerHTML = `<p class="text-center text-gray-500 py-4">🛒 Aún no agregaste productos</p>`;
-      totalCarritoSpan.textContent = "0";
-      if (btnEnviarPedido) btnEnviarPedido.classList.add("hidden");
-    } else {
-      let html = "";
-      carrito.forEach((item, index) => {
-        html += `
-          <div class="item-carrito">
-            <span>${item.nombre}</span>
-            <div>
-              <button onclick="cambiarCantidad(${index}, -1)">−</button>
-              <span>${item.cantidad}</span>
-              <button onclick="cambiarCantidad(${index}, 1)">+</button>
-              <button onclick="eliminarItem(${index})">×</button>
-            </div>
-            <span>$${item.precio * item.cantidad}</span>
-          </div>
-        `;
-      });
-      carritoLista.innerHTML = html;
-      const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-      totalCarritoSpan.textContent = total;
-      if (btnEnviarPedido) btnEnviarPedido.classList.remove("hidden");
-    }
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
+  if (carrito.length === 0) {
+    carritoLista.innerHTML = `<p class="text-center text-gray-500 py-4">🛒 Aún no agregaste productos</p>`;
+    totalCarritoSpan.textContent = "0";
+    if (btnEnviarPedido) btnEnviarPedido.classList.add("hidden");
+  } else {
+let html = "";
+carrito.forEach((item, index) => {
+  html += `
+    <div class="item-carrito">
+      <!-- Nombre del producto -->
+      <span class="nombre-producto">${item.nombre}</span>
+
+      <!-- Controles de cantidad -->
+      <div>
+        <button onclick="cambiarCantidad(${index}, -1)">−</button>
+        <span>${item.cantidad}</span>
+        <button onclick="cambiarCantidad(${index}, 1)">+</button>
+        <button onclick="eliminarItem(${index})">×</button>
+      </div>
+
+      <!-- Precio -->
+     <span class="precio-producto">$${(item.precio * item.cantidad).toLocaleString('es-AR')}</span>
+
+    </div>
+  `;
+});
+
+    carritoLista.innerHTML = html;
+    const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+   totalCarritoSpan.textContent = total.toLocaleString('es-AR');
+
+
+    if (btnEnviarPedido) btnEnviarPedido.classList.remove("hidden");
   }
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+}
+
 
   window.eliminarItem = function (index) {
     carrito.splice(index, 1);
@@ -274,22 +328,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 actualizarContadorCarrito();
 
-  function mostrarToast(mensaje = "Producto agregado al carrito ✅") {
-    const toast = document.getElementById("toast");
-    if (!toast) return;
-    toast.textContent = mensaje;
-    toast.classList.remove("opacity-0", "pointer-events-none");
-    toast.classList.add("opacity-100", "toast-animar");
+function mostrarToast(mensaje = "Producto agregado al carrito ✅") {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
 
-    toast.onclick = () => {
+  const toastText = document.getElementById("toastText");
+  if (toastText) toastText.textContent = mensaje;
+
+  toast.classList.remove("opacity-0", "pointer-events-none");
+  toast.classList.add("opacity-100", "toast-animar");
+
+  toast.onclick = () => {
+    if (typeof renderCarrito === "function") {
       renderCarrito();
-    };
+    }
+  };
 
-    setTimeout(() => {
-      toast.classList.remove("opacity-100", "toast-animar");
-      toast.classList.add("opacity-0", "pointer-events-none");
-    }, 3000);
-  }
+  setTimeout(() => {
+    toast.classList.remove("opacity-100", "toast-animar");
+    toast.classList.add("opacity-0", "pointer-events-none");
+  }, 3000);
+}
+
+
 
   window.abrirModalProducto = function (nombre, precio) {
     productoTemporal = { nombre, precio };
@@ -390,7 +451,29 @@ if (slider) {
   }
 
  
+  // Carga la imagen, calcula su relación de aspecto y la aplica al contenedor
+  (function () {
+    const box = document.getElementById('zoomText');
+    const src = box.getAttribute('data-src');
+    const img = new Image();
+    img.src = src;
+    img.decode ? img.decode().then(init).catch(() => init()) : img.onload = init;
 
+    function init() {
+      const ratio = img.naturalWidth && img.naturalHeight
+        ? (img.naturalWidth / img.naturalHeight)
+        : (16/9); // respaldo
+
+      // Ajusta el aspecto del contenedor para que la imagen quepa completa (sin recorte)
+      box.style.setProperty('--img-ratio', ratio);
+
+      // Setea la imagen como background
+      box.style.backgroundImage = `url("${src}")`;
+      
+      // Si tu foto es MUY vertical y querés que “lejos” sea aún más lejos:
+      // box.style.setProperty('--zoom-lejos', '90%'); // opcional
+    }
+  })();
   
 });
 

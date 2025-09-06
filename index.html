@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="PROYECTO/CSSestilos/styles.css">
   <link rel="icon" href="data:,">
 
@@ -24,14 +25,7 @@
       <a href="#" onclick="location.reload(); return false;">TENTAZIONE</a>
     </h1>
     <div class="flex items-center gap-4">
-      <!-- Lupa -->
-      <button>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-7">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </svg>
-      </button>
-
-      <!-- Carrito con número más grande -->
+ 
       <button id="botonCarrito" class="relative cursor-pointer transition-all duration-200">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.342 1.09.834L5.9 7.5h12.472a1.125 1.125 0 0 1 1.09 1.447l-1.65 5.5a1.125 1.125 0 0 1-1.09.803H8.25a1.125 1.125 0 0 1-1.09-.803L5.136 4.334A1.125 1.125 0 0 0 4.046 3H2.25z" />
@@ -49,13 +43,19 @@
   </div>
 
   <!-- Menú -->
-  <nav class="bg-[#1a1a1a] text-white flex justify-center items-center gap-8 h-[43px] text-sm font-medium tracking-wide uppercase">
+   <nav class="bg-[#1a1a1a] text-white flex justify-center items-center gap-8 h-[43px] text-sm font-medium tracking-normal uppercase">
 <a href="menu.html" class="hover:text-pink-300 transition">MENÚ</a>
-  <a href="Productos.html" class="hover:text-pink-300 transition">PRODUCTOS ⇓</a>
+<a href="productos.html" class="hover:text-pink-300 transition">
+  PRODUCTOS <span class="text-green-500">▼</span>
+</a>
+
+
+
+
+
     <a href="#sobre-tentazione" class="text-pink-300 hover:underline">Sobre Tentazione</a>
   </nav>
 </header>
-
 
 <!-- Slider -->
 <div class="slider-container w-full relative mt-0">
@@ -92,8 +92,8 @@
 
 
 <!-- Imagen del dique justo pegada al fondo negro de los dots -->
-<div class="relative w-full h-[320px] overflow-hidden font-[Quicksand] -mt-[2px]">
-  <img src="PROYECTO/imagenes/foto editada dike.jpg" alt="Banner Catamarca" class="w-full h-full object-cover brightness-[1.1]" />
+<div class="relative w-full h-[420px] overflow-hidden font-[Quicksand] -mt-[4px]">
+  <img src="PROYECTO/imagenes/TENTAZIONEEMPQUenuevo.jpeg" alt="Banner Catamarca" class="w-full h-full object-cover brightness-[1.1]" />
   <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
     <!-- Texto opcional -->
   </div>
@@ -104,13 +104,12 @@
 
 
 
-<!-- === TEXTO CON ANIMACIÓN DE LETRAS SOBRE IMAGEN === -->
-<div id="zoomText">
-  <img src="PROYECTO/imagenes/alfa blanconegro.png" alt="Stock de alfajores" />
+<!-- === TEXTO CON ANIMACIÓN DE LETRAS SOBRE IMAGEN (SIN RECORTE) === -->
+<div id="zoomText" data-src="PROYECTO/imagenes/alfastockproseeional.png">
   <div id="zonaZoom">
-    <h2 class="h2-animado">
-      NUESTROS ALFAJORES<br>
-      LISTOS PARA VOS
+    <h2 class="h2-animado titulo-hero">
+      <span class="linea">NUESTROS <span class="palabra-destacada">ALFAJORES</span></span>
+      <span class="linea linea-2">LISTOS PARA VOS</span>
     </h2>
   </div>
 </div>
@@ -293,17 +292,27 @@
 <footer class="footer-tentazione">
   <div class="footer-contenido">
     <p>© 2025 Tentazione Alfajores - Todos los derechos reservados.</p>
-    <p>Catamarca, Argentina</p>
-    <p>
-      <a href="https://www.instagram.com/tentazione.ar?igsh=MW5tM2ZmcmJjdGU0Yg==" target="_blank">INSTAGRAM</a> |
-      <a href="https://wa.me/5493834640224" target="_blank">WHATSAPP</a>
-    </p>
+    <p>📍Catamarca, Argentina</p>
+   <p>
+  <a href="https://www.instagram.com/tentazione.ar?igsh=MW5tM2ZmcmJjdGU0Yg==" target="_blank" class="tooltip-footer">
+    <i class="fab fa-instagram fa-lg"></i>
+    <span class="tooltiptext-footer">Instagram</span>
+  </a> |
+  <a href="https://www.facebook.com/profile.php?id=61565633245039&locale=es_LA" target="_blank" class="tooltip-footer">
+    <i class="fab fa-facebook fa-lg"></i>
+    <span class="tooltiptext-footer">Facebook</span>
+  </a> |
+ <a href="https://wa.me/5493834640224" target="_blank" class="tooltip-footer">
+    <i class="fab fa-whatsapp fa-lg"></i>
+    <span class="tooltiptext-footer">WhatsApp</span>
+  </a>
+
   </div>
+  
 </footer>
 
 
-
-<!-- MODAL DE CARRITO MEJORADO -->
+<!-- MODAL DE CARRITO -->
 <div id="modalCarrito" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden justify-center items-center">
   <div id="carritoContenido" class="modal-contenido bg-white p-4 rounded-lg shadow-lg w-full max-w-md">
 
@@ -332,6 +341,7 @@
     </button>
   </div>
 </div>
+
 
 
 <!-- MODAL INDIVIDUAL PARA AGREGAR PRODUCTO -->
@@ -379,6 +389,9 @@
     <img src="PROYECTO/imagenes/otrowsp.png" alt="WhatsApp" class="w-full h-full object-contain p-1" />
   </button>
 
+
+  </button>
+
   <!-- Opciones desplegables -->
   <div id="wspMenu" class="hidden flex-col absolute bottom-[70px] right-0 bg-white text-black rounded-xl shadow-2xl px-5 py-4 w-48 text-[15px] font-[500] transition-all duration-300 opacity-0 scale-95 space-y-3 border border-gray-200 z-[99999]">
     <a href="https://cutt.ly/CatalogoTentazione" target="_blank" class="flex items-center gap-3 hover:text-pink-600 transition">
@@ -396,15 +409,15 @@
 
 
 
+
 <!-- BOTÓN VOLVER ARRIBA -->
-<button id="btnVolverArriba"
-  
-  class="hidden opacity-0 fixed bottom-24 right-6 z-[99999] bg-pink-300 text-black border border-pink-500 rounded-full w-12 h-12 text-xl flex items-center justify-center transition-opacity duration-500 shadow-lg hover:scale-110"
+<button id="btnVolverArriba"class="hidden opacity-0 fixed bottom-36 right-4 z-[99999] bg-pink-300 text-black border border-pink-500 rounded-full w-12 h-12 text-xl flex items-center justify-center transition-opacity duration-500 shadow-lg hover:scale-110"
 >
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
   </svg>
 </button>
+
 
 
 

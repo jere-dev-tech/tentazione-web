@@ -6,50 +6,58 @@
   <title>Productos - Tentazione</title>
 
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="PROYECTO/CSSestilos/productos.css">
+<link rel="icon" href="imagenes-comprimidas/fav" type="image/png">
+
+<!-- Estilos -->
+
+<link rel="stylesheet" href="PROYECTO/CSSestilos/productos.css">
+
 
   <script src="https://cdn.tailwindcss.com"></script>
 
 
 </head>
+<body>
 
-  <header class="bg-black p-4 flex items-center justify-between sticky top-0 z-50">
+
+<header class="bg-[#1a1a1a] text-white fixed top-0 w-full z-50 flex justify-between items-center h-[50px] px-4 text-sm font-medium tracking-wide uppercase">
+
   <!-- 🔙 Botón Home -->
-  <div class="home-icon">
-    <a href="index.html" title="Volver al inicio">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="30" height="30">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m10-11v10a1 1 0 01-1 1h-5m-6 0h6" />
-      </svg>
-    </a>
-  </div>
+<!-- 🔙 Casita con color activo -->
+<a href="index.html" title="Inicio">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+    width="28" height="28"
+    class="text-amber-300 transition hover:text-pink-300">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m10-11v10a1 1 0 01-1 1h-5m-6 0h6" />
+  </svg>
+</a>
 
   <!-- 🌐 Navegación centrada -->
-  <nav class="flex-1 flex justify-center gap-10">
-    <a href="menu.html" class="nav-link">MENÚ</a>
-    <span class="nav-link active">PRODUCTOS</span>
+  <nav class="flex items-center gap-8">
+    <a href="menu.html" class="hover:text-pink-300 transition">MENÚ</a>
+   <a href="productos.html" class="text-pink-400 font-bold">
+  PRODUCTOS <span class="text-red-700">▲</span>
+</a>
+
+
   </nav>
 
-<!-- 🛒 Carrito a la derecha -->
-<!-- 🛒 Carrito con contador fuera del botón -->
-<div class="relative" id="contenedorCarritoHeader">
-  <button id="botonCarrito" class="cursor-pointer transition-all duration-200 text-white hover:text-pink-400">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.342 1.09.834L5.9 7.5h12.472a1.125 1.125 0 0 1 1.09 1.447l-1.65 5.5a1.125 1.125 0 0 1-1.09.803H8.25a1.125 1.125 0 0 1-1.09-.803L5.136 4.334A1.125 1.125 0 0 0 4.046 3H2.25z" />
-      <path stroke-linecap="round" stroke-linejoin="round" d="M7 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM17 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
-    </svg>
-  </button>
-  <span id="contadorCarrito" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold hidden">0</span>
-</div>
-
-
-</head>
-<body>
+  <!-- 🛒 Carrito -->
+  <div class="relative" id="contenedorCarritoHeader">
+    <button id="botonCarrito" class="cursor-pointer transition-all duration-200 text-white hover:text-pink-400">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.342 1.09.834L5.9 7.5h12.472a1.125 1.125 0 0 1 1.09 1.447l-1.65 5.5a1.125 1.125 0 0 1-1.09.803H8.25a1.125 1.125 0 0 1-1.09-.803L5.136 4.334A1.125 1.125 0 0 0 4.046 3H2.25z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zM17 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
+      </svg>
+    </button>
+    <span id="contadorCarrito" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold hidden">0</span>
+  </div>
 
 </header>
 
@@ -57,6 +65,8 @@
 
 
 
+
+<main class="pt-[60px]">
 
 
   <!-- PRODUCTOS -->
@@ -69,36 +79,18 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center max-w-6xl mx-auto px-4">
 
-      <!-- 1/2 DOCENA  -->
-<div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
-  <img src="/imagenes-comprimidas/edicion blanco negro.jpg.jpg" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
-  <div class="p-4 text-center">
-    <p class="text-sm tracking-widest font-semibold">1/2 DOCENA CLASICOS  </p>
-    <p class="text-xl font-bold mt-2">$10,800</p>
-    <p class="text-sm text-gray-400 line-through mt-1">$12,0000</p>
-      <p class="text-sm mt-1">
-  <span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 10% OFF
-   <button
-  onclick="abrirModalProducto('CLASICOS 1/2 DOCENA', 10800)"
-  class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
->
-  Agregar al carrito
-</button>
-
-  </div>
-</div>
 
 <!-- 1/2 DOCENA A ELECCION -->
 <div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
-  <img src="/imagenes-comprimidas/edicion blanco negro.jpg.jpg" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
+  <img src="imagenes-comprimidas/surtidos.png" alt="1/2 Docena Mixta" class="w-full object-contain h-auto max-h-[200px]">
   <div class="p-4 text-center">
     <p class="text-sm tracking-widest font-semibold"> 1/2 DOCENA A ELECCION</p>
-   <p class="text-xl font-bold mt-2">$14,000</p>
-   <p class="text-sm text-gray-400 line-through mt-1">$15,000</p>
+   <p class="text-xl font-bold mt-2">$15,000</p>
+   <p class="text-sm text-gray-400 line-through mt-1">$20,000</p>
   <p class="text-sm mt-1">
-<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 10% OFF
+<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 
    <button
- onclick="abrirModalProducto('1/2 DOCENA A ELECCION', 14000)"
+ onclick="abrirModalProducto('1/2 DOCENA A ELECCION', 15000)"
 
   class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
 >
@@ -109,39 +101,20 @@
 </div>
 
 
-<!-- DOCENA CLÁSICOS -->
-<div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
-  <img src="/imagenes-comprimidas/alfa blanconegro.png" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
-  <div class="p-4 text-center">
-    <p class="text-sm tracking-widest font-semibold">CLASICOS DOCENA </p>
-   <p class="text-xl font-bold mt-2">$20,400</p>
-   <p class="text-sm text-gray-400 line-through mt-1">$24,000</p>
-  <p class="text-sm mt-1">
-<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 15% OFF
-   <button
- onclick="abrirModalProducto('DOCENA CLÁSICOS', 20400)"
-
-  class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
->
-  Agregar al carrito
-</button>
-
-  </div>
-</div>
 
 
 
       <!-- DOCENA A ELECCION -->
 <div class="bg-black text-white max-w-xs rounded-lg shadow-lg overflow-hidden border-4 border-black">
-  <img src="/imagenes-comprimidas/alfa blanconegro.png" alt="1/2 Docena Mixta" class="w-full h-[200px] object-cover">
+  <img src="imagenes-comprimidas/surtidos.png" alt="1/2 Docena Mixta" class="w-full object-contain h-auto max-h-[200px]">
   <div class="p-4 text-center">
     <p class="text-sm tracking-widest font-semibold">DOCENA A ELECCION </p>
-   <p class="text-xl font-bold mt-2">$24,000</p>
+   <p class="text-xl font-bold mt-2">$25,000</p>
    <p class="text-sm text-gray-400 line-through mt-1">$30,000</p>
   <p class="text-sm mt-1">
-<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 20% OFF
+<span class="text-amber-400">EFECTIVO</span> o <span class="text-amber-400">TRANSFERENCIA</span> 
    <button
- onclick="abrirModalProducto('DOCENA A ELECCION', 24000)"
+ onclick="abrirModalProducto('DOCENA A ELECCION', 25000)"
 
   class="mt-4 bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 w-full rounded uppercase tracking-wide"
 >
@@ -153,7 +126,6 @@
 
 
   </section>
-
 
 
 
@@ -193,7 +165,8 @@
 
 <!-- MODAL DE CARRITO MEJORADO -->
 <div id="modalCarrito" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden justify-center items-center">
-  <div id="carritoContenido" class="modal-contenido bg-white p-4 rounded-lg shadow-lg w-full max-w-md relative text-black">
+  <div id="carritoContenido" class="modal-contenido fondo-modal p-4 rounded-lg shadow-lg w-full max-w-md relative text-black">
+
 
     <!-- Botón cerrar -->
     <button id="cerrarModal" class="absolute top-4 right-4 text-gray-400 hover:text-black text-2xl font-bold transition">×</button>
@@ -225,9 +198,7 @@
 
 
 <!-- BOTÓN VOLVER ARRIBA -->
-<button id="btnVolverArriba"
-
-  class="hidden opacity-0 fixed bottom-4 right-4 z-[99999] bg-pink-300 text-black border border-pink-500 rounded-full w-12 h-12 text-xl flex items-center justify-center transition-opacity duration-500 shadow-lg hover:scale-110"
+<button id="btnVolverArriba"class="hidden opacity-0 fixed bottom-36 right-4 z-[99999] bg-pink-300 text-black border border-pink-500 rounded-full w-12 h-12 text-xl flex items-center justify-center transition-opacity duration-500 shadow-lg hover:scale-110"
 >
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
@@ -235,9 +206,49 @@
 </button>
 
 
+
+<!-- ✅ BOTÓN FLOTANTE DE WHATSAPP -->
+<div id="boton-wsp-flotante" class="fixed bottom-5 right-5 z-[99999] pointer-events-auto">
+  <!-- Botón principal -->
+  <button id="wspBtn" class="bg-green-500 p-3 rounded-full shadow-lg hover:scale-105 transition flex items-center justify-center w-[60px] h-[60px] z-[99999]">
+    <img src="PROYECTO/imagenes/otrowsp.png" alt="WhatsApp" class="w-full h-full object-contain p-1" />
+  </button>
+
+  <!-- Opciones desplegables -->
+  <div id="wspMenu" class="hidden flex-col absolute bottom-[70px] right-0 bg-white text-black rounded-xl shadow-2xl px-5 py-4 w-48 text-[15px] font-[500] transition-all duration-300 opacity-0 scale-95 space-y-3 border border-gray-200 z-[99999]">
+    <a href="https://cutt.ly/CatalogoTentazione" target="_blank" class="flex items-center gap-3 hover:text-pink-600 transition">
+      🛍️<span>Ver Catálogo</span>
+    </a>
+    <a href="https://cutt.ly/PedidoTentazione" target="_blank" class="flex items-center gap-3 hover:text-green-600 transition">
+      🛒 <span>Hacer Pedido</span>
+    </a>
+  </div>
+</div>
+
+
+<!-- ✅ TOAST DE CONFIRMACIÓN -->
+<div id="toast" class="fixed bottom-[90px] right-5 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+</div>
+
+
+
+
+
+
+
+
+</main>
+
+
+
   <!-- SCRIPTS -->
-   <script src="PROYECTO/js/botonScroll.js"></script>
-  <script src="PROYECTO/js/productos.js"></script>
+   <script src="/PROYECTO/js/slider.js"></script>
+  
+<script src="js/botonScroll.js"></script>
+
 </body>
 </html>
 

@@ -1,3 +1,4 @@
+/* 🎨 ESTILO GLOBAL */
 body {
   font-family: 'Poppins', sans-serif;
   background: url('../imagenes/chocoblanco.png') repeat center center fixed;
@@ -7,67 +8,55 @@ body {
   padding: 0;
 }
 
+/* 🖋 TIPOGRAFÍAS PARA TÍTULOS */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
+/* 🔝 HEADER PRINCIPAL */
 header {
-  background-color: #111;
-  padding: 15px 30px;
+  background-color: #1a1a1a;
+  padding: 0 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 50px;
   position: sticky;
   top: 0;
   z-index: 1000;
   font-family: 'Poppins', sans-serif;
 }
 
-.home-icon {
-  position: absolute;
-  left: 30px;
+/* 🏠 ICONO DE INICIO */
+.home-icon svg {
+  color: white;
+  transition: color 0.3s ease;
 }
 
-.home-icon a {
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: #fff;
-  background: none;
-  border: none;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.home-icon a:focus {
-  outline: none;
-}
-
-.home-icon a:hover {
+.home-icon svg:hover {
   color: #ffcc66;
 }
 
-.nav-center {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-link {
+/* 📚 LINKS DE NAVEGACIÓN */
+header nav a {
   font-family: 'Playfair Display', serif;
   color: #ddd;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  position: relative;
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+header nav a:hover {
   color: #fff;
 }
 
-.nav-link.active::after {
-  content: none;
+header nav a.text-pink-300 {
+  color: #ec4899; /* Tailwind pink-300 */
+  font-weight: 600;
 }
 
+/* 🧁 SECCIÓN PRODUCTOS */
 .productos-section {
   padding: 40px 20px;
   text-align: center;
@@ -78,6 +67,8 @@ header {
   color: #000000;
   margin-bottom: 40px;
 }
+
+/* ⬆️ BOTÓN VOLVER ARRIBA */
 #btnVolverArriba {
   transition: opacity 0.5s ease, transform 0.3s ease;
   backdrop-filter: blur(4px);
@@ -89,22 +80,86 @@ header {
 }
 
 #btnVolverArriba::after {
-  
+  content: 'Volver arriba';
   position: absolute;
-  bottom: 155%;
-  right: 50%;
-  transform: translateX(50%);
+  bottom: 140%; /* lo bajamos un poco si es más chico */
+ left: 15%;
+transform: translateX(-50%);
+
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  padding: 2px 6px; /* MÁS CHICO: antes era 4px 10px */
+  border-radius: 4px; /* también más redondeado */
+  font-size: 0.65rem; /* MÁS CHICO: antes era 0.75rem */
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
+
 #btnVolverArriba:hover::after {
   opacity: 1;
+}
+
+
+
+.item-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.item-carrito span {
+  font-weight: 500;
+  color: #000000;
+}
+
+/* Contenedor de los controles */
+.item-carrito div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Botones grandes + − × */
+.item-carrito button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00ff3c;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.item-carrito button:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+}
+
+/* Botón eliminar específico (la X) */
+.item-carrito button:last-of-type {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.item-carrito button:last-of-type:hover {
+  background-color: #e60000;
+}
+.bg-oscuro-tentazione {
+  background-color: #111111; /* o un gris muy oscuro que combine con tu fondo */
+  color: #ffffff;
+}
+
+.fondo-modal {
+  background-color: rgba(255, 240, 245, 0.95); /* rosa pastel transparente */
+  backdrop-filter: blur(6px); /* efecto borroso tipo glassmorphism */
 }

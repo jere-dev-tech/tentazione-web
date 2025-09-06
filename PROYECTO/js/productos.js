@@ -23,10 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
+
+
   function cerrarModalAgregar() {
     modalAgregar.classList.add("hidden");
     modalAgregar.classList.remove("flex");
   }
+
+
+
+
+
+  
 
   window.seleccionarCantidadRapida = function (cantidad) {
     cantidadTemporal = cantidad;
@@ -146,13 +155,15 @@ document.addEventListener("DOMContentLoaded", () => {
               <button onclick="cambiarCantidad(${index}, 1)">+</button>
               <button onclick="eliminarItem(${index})">×</button>
             </div>
-            <span>$${item.precio * item.cantidad}</span>
+            <span>$${(item.precio * item.cantidad).toLocaleString('es-AR')}</span>
+
           </div>
         `;
       });
       carritoLista.innerHTML = html;
       const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-      totalCarritoSpan.textContent = total;
+      totalCarritoSpan.textContent = total.toLocaleString('es-AR');
+
       if (btnEnviarPedido) btnEnviarPedido.classList.remove("hidden");
     }
     modal.classList.remove("hidden");
@@ -217,20 +228,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   actualizarContadorCarrito();
 
-  function mostrarToast(mensaje = "Producto agregado al carrito ✅") {
-    const toast = document.getElementById("toast");
-    if (!toast) return;
-    toast.textContent = mensaje;
-    toast.classList.remove("opacity-0", "pointer-events-none");
-    toast.classList.add("opacity-100", "toast-animar");
 
-    toast.onclick = () => {
-      renderCarrito();
-    };
 
-    setTimeout(() => {
-      toast.classList.remove("opacity-100", "toast-animar");
-      toast.classList.add("opacity-0", "pointer-events-none");
-    }, 3000);
+
+  const wspBtn = document.getElementById("wspBtn");
+  const wspMenu = document.getElementById("wspMenu");
+
+  if (wspBtn && wspMenu) {
+    wspBtn.addEventListener("click", () => {
+      const abierto = !wspMenu.classList.contains("hidden");
+
+      if (abierto) {
+        wspMenu.classList.add("opacity-0", "scale-95");
+        setTimeout(() => {
+          wspMenu.classList.add("hidden");
+        }, 200);
+      } else {
+        wspMenu.classList.remove("hidden");
+        setTimeout(() => {
+          wspMenu.classList.remove("opacity-0", "scale-95");
+        }, 10);
+      }
+    });
+
+    // Cerrar menú si se hace clic fuera
+    document.addEventListener("click", (e) => {
+      if (!wspBtn.contains(e.target) && !wspMenu.contains(e.target)) {
+        wspMenu.classList.add("opacity-0", "scale-95");
+        setTimeout(() => {
+          wspMenu.classList.add("hidden");
+        }, 200);
+      }
+    });
   }
 });
