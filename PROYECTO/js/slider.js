@@ -306,7 +306,8 @@ carrito.forEach((item, index) => {
       mensaje += `- ${p.cantidad} x ${p.nombre}%0A`;
     });
     const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
-    mensaje += `%0ATotal: $${total}`;
+mensaje += `%0ATotal: $${total.toLocaleString('es-AR')}`;
+
     window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
   };
 
